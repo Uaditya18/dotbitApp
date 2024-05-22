@@ -25,12 +25,12 @@ public class NotesListAdapters extends RecyclerView.Adapter<NotesViewHolder>{
     Context context;
     List<Notes> list;
 
-    NotesClickListner listner;
+    NotesClickListner listener;
 
-    public NotesListAdapters(Context context, List<Notes> list, NotesClickListner listner) {
+    public NotesListAdapters(Context context, List<Notes> list, NotesClickListner listener) {
         this.context = context;
         this.list = list;
-        this.listner = listner;
+        this.listener = listener;
     }
 
     @NonNull
@@ -51,11 +51,13 @@ public class NotesListAdapters extends RecyclerView.Adapter<NotesViewHolder>{
         holder.textview_date.setSelected(true);
 
         if(list.get(position).isPinned()){
-            holder.pin.setImageResource(R.drawable.ic_pin);
+            holder.imageview_pin.setImageResource(R.drawable.ic_pin);
         }
         else {
-            holder.pin.setImageResource(0);
-
+            if(holder.imageview_pin != null) {
+                // Now you can safely set the image resource
+                holder.imageview_pin.setImageResource(0);
+            }
         }
 
         int color_code = getRandomColor();
@@ -65,14 +67,14 @@ public class NotesListAdapters extends RecyclerView.Adapter<NotesViewHolder>{
         holder.notes_container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listner.onClick(list.get(holder.getAdapterPosition()));
+                listener.onClick(list.get(holder.getAdapterPosition()));
             }
         });
 
         holder.notes_container.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                listner.onLongCLick(list.get(holder.getAdapterPosition()),holder.notes_container);
+                listener.onLongCLick(list.get(holder.getAdapterPosition()),holder.notes_container);
                 return true;
             }
         });
@@ -98,13 +100,21 @@ public class NotesListAdapters extends RecyclerView.Adapter<NotesViewHolder>{
     public int getItemCount() {
         return list.size();
     }
+
+    public void filterList(List<Notes> filteredList){
+        list = filteredList;
+        notifyDataSetChanged();
+    }
 }
+
+
 
 class NotesViewHolder extends RecyclerView.ViewHolder{
 
+
     CardView notes_container;
     TextView textview_title,textview_note,textview_date;
-    ImageView pin;
+    ImageView imageview_pin;
     public NotesViewHolder(@NonNull View itemView) {
         super(itemView);
 

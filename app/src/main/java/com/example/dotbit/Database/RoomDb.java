@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase;
 
 import com.example.dotbit.Models.Notes;
 
-@Database(entities = Notes.class, version = 1,exportSchema = false)
+@Database(entities = Notes.class, version = 2,exportSchema = false)
 public abstract class RoomDb extends RoomDatabase {
     private static RoomDb database;
     private static String DATABASE_NAME = "NoteApp";
