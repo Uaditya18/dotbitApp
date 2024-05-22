@@ -14,12 +14,25 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchview_home"
+            android:layout_margin="16dp"
+            android:background="@drawable/search_border"
+            app:queryHint="Search Notes..."
+            app:iconifiedByDefault="false"
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"/>
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_home"
+            android:layout_below="@+id/searchview_home"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="8dp" />
@@ -31,12 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="24dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="700dp"
-            android:layout_marginEnd="14dp"
-            android:layout_marginRight="24dp"
-            android:layout_marginBottom="10dp"
+
             android:src="@drawable/ic_add" />
 
 
