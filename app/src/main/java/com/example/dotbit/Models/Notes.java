@@ -9,7 +9,7 @@ import java.io.Serializable;
 @Entity(tableName = "notes")
 public class Notes implements Serializable {
     @PrimaryKey(autoGenerate = true)
-    int ID =0;
+    int id =0;
     @ColumnInfo(name = "title")
     String title ="";
     @ColumnInfo(name = "notes")
@@ -19,12 +19,12 @@ public class Notes implements Serializable {
     @ColumnInfo(name = "pinned")
     boolean pinned = false;
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
