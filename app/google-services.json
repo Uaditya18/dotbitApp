@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "660912184246",
+    "project_id": "dotbit-ca1a6",
+    "storage_bucket": "dotbit-ca1a6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:660912184246:android:3d7b19065278aaf0647f17",
+        "android_client_info": {
+          "package_name": "com.example.dotbit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBBQLpXJ4JVeTyTcUJ0UCA-Go4mwkSFyA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -24,21 +24,20 @@
             android:layout_height="405dp"
             android:background="@drawable/profile_rect">
 
-
             <ImageView
-                android:id="@+id/imageButton4"
-                android:layout_width="187dp"
-                android:layout_height="166dp"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="140dp"
-                android:layout_marginEnd="230dp"
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="68dp"
+                android:layout_marginTop="89dp"
+                android:layout_marginEnd="175dp"
+                android:layout_marginBottom="120dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.337"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                tools:srcCompat="@drawable/profile_pic" />
+                app:srcCompat="@drawable/profile_pic" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -62,7 +61,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
 
-                <EditText
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:backgroundTint="#99d4f9"
@@ -71,7 +70,7 @@
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
-                <EditText
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:backgroundTint="#99d4f9"
@@ -80,7 +79,7 @@
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
-                <EditText
+                <TextView
                     android:text="uaditya344@gmail.com"
                     android:textSize="20dp"
                     android:textAlignment="center"
@@ -126,6 +125,7 @@
                     android:textStyle="bold" />
 
                 <Button
+                    android:id="@+id/logout"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:backgroundTint="#99d4f9"

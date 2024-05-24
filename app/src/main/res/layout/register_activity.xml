@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".register_activity">
+    <LinearLayout
+        android:id="@+id/loginForm_layout"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:padding="8dp">
+        <EditText
+            android:id="@+id/edittext_name"
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:hint="enter your name.."
+            android:textSize="20dp"
+            android:textStyle="normal"
+            android:textColor="@color/black"
+            android:textColorHint="@color/gray"
+            android:background="@drawable/login_fields"
+            android:layout_marginTop="20dp"
+            />
+
+        <EditText
+            android:id="@+id/edittext_email"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:hint="enter your email.."
+            android:textColorHint="@color/gray"
+            android:background="@drawable/login_fields"
+            android:padding="8dp"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:textStyle="normal"
+            android:textColor="@color/black"
+            />
+
+        <EditText
+            android:id="@+id/edittext_phone"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:hint="enter phone no.."
+            android:textColorHint="@color/gray"
+            android:background="@drawable/login_fields"
+            android:padding="8dp"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:textStyle="normal"
+            android:textColor="@color/black"
+            />
+
+        <EditText
+            android:id="@+id/edittext_password"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:hint="enter password.."
+            android:textColorHint="@color/gray"
+            android:background="@drawable/login_fields"
+            android:padding="8dp"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:textStyle="normal"
+            android:textColor="@color/black"
+            />
+
+        <EditText
+            android:id="@+id/edittext_rePassword"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:hint="retype pasword.."
+            android:textColorHint="@color/gray"
+            android:background="@drawable/login_fields"
+            android:padding="8dp"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:textStyle="normal"
+            android:textColor="@color/black"
+            />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:indeterminate="true"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/loginForm_layout"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:indeterminateTint="#FF0000"/>
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/progress_bar"
+        android:background="@drawable/search_border"
+        android:padding="16dp"
+        android:layout_marginTop="10dp"
+        android:text="Register"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/login_link"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/register"
+        android:layout_centerInParent="true"
+
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:textColor="#4C4CD1"
+        android:linksClickable="true"
+        android:text="already sign in click here" />
+
+
+
+
+</RelativeLayout>
