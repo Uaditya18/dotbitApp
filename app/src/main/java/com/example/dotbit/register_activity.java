@@ -27,6 +27,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class register_activity extends AppCompatActivity {
     TextView login_link;
@@ -35,6 +40,7 @@ public class register_activity extends AppCompatActivity {
     EditText edittext_name,edittext_email,edittext_phone,edittext_password,edittext_rePassword;
     FirebaseAuth fAuth;
     ProgressBar progressBar;
+    FirebaseFirestore fStore;
 
     Button register;
     @SuppressLint("MissingInflatedId")
@@ -59,6 +65,7 @@ public class register_activity extends AppCompatActivity {
         progressBar = findViewById(R.id.progress_bar);
 
         fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
 
 
 
@@ -132,9 +139,24 @@ public class register_activity extends AppCompatActivity {
                                     Log.d(TAG,"onFailure: Email not sent"+e.getMessage());
                                 }
                             });
+                            String userID = fAuth.getCurrentUser().getUid();
+                            DocumentReference documentReference = fStore.collection("users").document(userID);
 
-
-
+                            Map<String,Object> user = new HashMap<>();
+                            user.put("name",name);
+                            user.put("email",email);
+                            user.put("phone",phone);
+                            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d(TAG,"onSuccess: user profile created for"+userID);
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.d(TAG,"OnFailure: "+e.getMessage());
+                                }
+                            });
                         }
                         else {
                             Toast.makeText(register_activity.this, "Error !"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
